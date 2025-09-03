@@ -299,3 +299,65 @@ footer {
 @media (max-width: 480px) {
   .nav { font-size: 1.6rem; padding: 0.3rem 0.6rem; }
 }
+
+/* --- News images per article --- */
+.news-list img {
+  display: block;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+}
+
+/* 個別にサイズを制御したい場合はクラスを追加 */
+.news-img-small { width: 120px; height: auto; }
+.news-img-medium { width: 240px; height: auto; }
+.news-img-large { width: 360px; height: auto; }
+
+/* =========================
+   Responsive adjustments
+   ========================= */
+@media (max-width: 900px) {
+  /* Global rhythm */
+  main { padding: 16px; }
+  section { padding: 18px; }
+  h2 { font-size: 1.5rem; }
+
+  /* Fixed header + nav */
+  .global-nav { padding: 0.5rem 1rem; }
+  .global-nav .logo { max-height: 48px; margin-top: 6px; }
+  .global-nav ul { flex-wrap: wrap; gap: 4px; }
+  .global-nav ul li a { padding: 0.75rem 1rem; }
+
+  /* Hero header */
+  .main-header { height: 320px; }
+  .main-header h1 { font-size: 2rem; }
+  .main-header p { font-size: 1rem; }
+
+  /* Grids stack to single column */
+  .info-grid, .floor-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  /* Floor page layout */
+  .floor-details { margin: 16px auto; padding: 0 16px; }
+  .floor-content { flex-direction: column; gap: 16px; }
+  .floor-content img { width: 100%; max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+  /* Tighter typography */
+  body { line-height: 1.75; }
+  h2 { font-size: 1.35rem; }
+
+  /* Hero header smaller */
+  .main-header { height: 280px; }
+  .main-header h1 { font-size: 1.7rem; }
+  .main-header p { font-size: 0.95rem; }
+
+  /* News images never overflow */
+  .news-list img { max-width: 100%; height: auto; }
+}
+
+/* Tables become horizontally scrollable on narrow screens */
+.floor-section table { width: 100%; border-collapse: collapse; }
+.floor-section table th, .floor-section table td { padding: .5rem .6rem; border-bottom: 1px solid #e6e6e6; }
+@media (max-width: 720px) {
+  .floor-section table { display: block; overflow-x: auto; white-space: nowrap; }
+}
