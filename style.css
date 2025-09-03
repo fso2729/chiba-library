@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+/* 全体のスタイル */
+body {
+    font-family: 'Noto Sans JP', sans-serif; 
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background-color: #F3ECD8;
+    color: #343a40;
+}
+
+/* --- ナビゲーションメニュー --- */
+.global-nav {
+    background-color: #A9D159;
+    padding: 0.5rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; /* 横幅の計算を正確にするために追加 */
+}
+
+/* ナビゲーション内のロゴ */
+.global-nav .logo {
+    max-height: 60px;
+    width: auto;
+    margin-top:13px;
+
+}
+/* ナビゲーションのメニューリスト */
+.global-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.global-nav ul li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.global-nav ul li a:hover {
+    background-color: #114514;
+}
+
+
+/* --- ヘッダー（背景写真部分） --- */
+.main-header {
+    position: relative;
+    margin-top: 56px;
+    height: 400px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('千葉市中央図書館3.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* スライド画像のハミ出し防止 */
+}
+
+.main-header h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.main-header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+
+/* --- メインコンテンツ --- */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    background: #fff;
+    margin-bottom: 25px;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    scroll-margin-top: 80px;
+}
+
+h2 {
+    color: #000000;
+    border-bottom: 2px solid #b3d274;
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+/* セクション内の画像 */
+section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* --- 各グリッドセクションのスタイル --- */
+.info-grid, .floor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.info-item, .floor-item {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    border-left: 5px solid #114514;
+}
+
+.info-item h3, .floor-item h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    text-align: center;
+}
+
+.service-item {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.service-item span {
+    font-size: 1.8rem;
+}
+
+
+/* --- フッター --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #A9D159;
+    color: #114514;
+}
+/* --- ここから詳細ページ用のスタイル --- */
+
+/* 詳細ページのヘッダー */
+.page-header {
+    margin-top: 75px; /* 固定ナビゲーションの高さ分 */
+    background-color: #2B6442;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* フロア詳細セクション */
+.floor-details {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.floor-section {
+    background: #fff;
+    margin-bottom: 30px;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.floor-section h2 {
+    font-size: 2rem;
+    color: #000000;
+    border-bottom: 2px solid #b3d274;
+    padding-bottom: 10px;
+}
+
+.floor-content {
+    display: flex;
+    flex-wrap: wrap; /* 画面が小さい時に折り返す */
+    gap: 30px; /* 画像と説明の間隔 */
+    margin-top: 20px;
+    align-items: flex-start;
+}
+
+.floor-content img {
+    max-width: 100%;
+    width: 300px; /* 画像の幅を固定 */
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.floor-description {
+    flex: 1; /* 残りのスペースをすべて使う */
+    min-width: 300px; /* 折り返す際の最小幅 */
+}
+
+.floor-description h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.floor-description ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.floor-description ul li {
+    padding: 8px 0 8px 25px;
+    position: relative;
+    border-bottom: 1px dotted #ccc;
+}
+/* リストの先頭にチェックマーク風のアイコンを付ける */
+.floor-description ul li::before {
+    content: '✔';
+    color: #A9D159;
+    position: absolute;
+    left: 0;
+}
+
+/* --- Header slider (images behind the title) --- */
+.slider-wrapper {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  z-index: 1; /* 画像はテキストの背面 */
+}
+/* 画像の上に薄い暗幕（可読性向上） */
+.slider-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease;
+}
+.slide { flex: 0 0 100%; height: 100%; }
+.slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* タイトルなどのテキストを前面に */
+.header-content { position: relative; z-index: 3; padding: 0 1rem; }
+
+/* 矢印ボタン */
+.nav {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  z-index: 4; /* 暗幕より前 */
+  line-height: 1;
+  border-radius: 6px;
+  transition: background 0.25s ease;
+}
+.nav:hover { background: rgba(0,0,0,0.7); }
+.prev { left: 10px; }
+.next { right: 10px; }
+
+@media (max-width: 480px) {
+  .nav { font-size: 1.6rem; padding: 0.3rem 0.6rem; }
+}

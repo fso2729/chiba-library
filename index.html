@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千葉市中央図書館 ご案内</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    /* --- hero header with background image --- */
+    .main-header {
+      position: relative;
+      margin-top: 56px;
+      height: 400px;
+      background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('chiba-library.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .main-header .header-content {
+      position: relative;
+      z-index: 2;
+    }
+    .main-header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      font-weight: 700;
+    }
+    .main-header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    </style>
+</head>
+<body>
+
+    <nav class="global-nav">
+        <a href="#"><img src="千葉市中央図書館ロゴ.png" alt="千葉市中央図書館 ロゴ" class="logo"></a>
+
+        <ul>
+            <li><a href="#about">図書館について</a></li>
+            <li><a href="annai.html">利用案内</a></li>
+            <li><a href="floor-guide.html">施設案内</a></li>
+            <li><a href="osirase.html">お知らせ</a></li>
+        </ul>
+    </nav>
+
+    <header class="main-header">
+      <div class="slider-wrapper">
+        <div class="slider">
+          <div class="slide"><img src="chiba-library.jpg" alt="図書館写真1"></div>
+          <div class="slide"><img src="chiba-library2.jpg" alt="図書館写真2"></div>
+          <div class="slide"><img src="chiba-library3.jpg" alt="図書館写真3"></div>
+        </div>
+        <button class="nav prev" aria-label="前へ">❮</button>
+        <button class="nav next" aria-label="次へ">❯</button>
+      </div>
+        <div class="header-content">
+            <h1>千葉市中央図書館へようこそ</h1>
+            <p>あなたの「知りたい」が見つかる場所</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>図書館について</h2>
+            <p>千葉市中央図書館は、JR千葉駅からアクセスしやすい場所にある、知識と文化の拠点です。豊富な蔵書と落ち着いた学習スペースを提供しています。皆さまの学習、調査研究、読書活動をサポートします。</p>
+            <img src="chiba-library.jpg" alt="千葉市中央図書館の学習スペースのイメージ">
+        </section>
+
+        <section id="info">
+            <h2>利用案内</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>開館時間</h3>
+                    <p>火～金: 9:30～21:00</p>
+                    <p>土・日・祝: 9:30～17:30</p>
+                </div>
+                <div class="info-item">
+                    <h3>休館日</h3>
+                    <p>月曜日（祝日の場合は翌日）</p>
+                    <p>第3木曜日（館内整理日）</p>
+                    <p>年末年始</p>
+                </div>
+                <div class="info-item">
+                    <h3>アクセス</h3>
+                    <p>〒260-0045<br>千葉市中央区弁天3-7-7</p>
+                    <p>JR千葉駅東口/北口 徒歩約8分</p>
+                    <p><a href="https://maps.google.com/?q=千葉市中央区弁天3-7-7" target="_blank" rel="noopener">地図で開く</a></p>
+                </div>
+                <div class="info-item">
+                    <h3>駐車場</h3>
+                    <p>生涯学習センター駐車場（有料）</p>
+                    <p>最初の30分無料</p>
+                    <p>図書館利用者はさらに60分無料</p>
+                </div>
+            </div>
+            <div class="map-embed" aria-label="地図">
+              <iframe
+                title="千葉市中央図書館の地図"
+                src="https://www.google.com/maps?q=千葉市中央区弁天3-7-7&hl=ja&z=16&output=embed"
+                width="100%" height="360" style="border:0; border-radius:8px"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+              </iframe>
+            </div>
+  <p class="more"><a href="annai.html">もっと見る</a></p>
+        </section>
+
+        <section id="news">
+          <h2>お知らせ</h2>
+          <ul class="news-list">
+            <li><time datetime="2025-09-01">2025/09/01</time> あなたの本を図書館に！</li>
+            <li><time datetime="2025-08-20">2025/08/20</time> 雑誌スポンサー募集について</li>
+            <li><time datetime="2025-08-10">2025/08/10</time> 学習室の混雑時間帯のお知らせ</li>
+          </ul>
+          <p class="more"><a href="osirase.html">もっと見る</a></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 千葉市中央図書館 紹介サイト</p>
+    </footer>
+
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".slider");
+  const slides = document.querySelectorAll(".slide");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  if (!slider || slides.length === 0) return;
+
+  let current = 0;
+  const total = slides.length;
+
+  function goToSlide(index) {
+    // CSS適用前でも安全に実行できるよう、transform を直接設定
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function nextSlide() {
+    current = (current + 1) % total;
+    goToSlide(current);
+  }
+
+  function prevSlide() {
+    current = (current - 1 + total) % total;
+    goToSlide(current);
+  }
+
+  // 自動再生（5秒）
+  let auto = setInterval(nextSlide, 5000);
+
+  // ボタン操作（存在する場合のみ）
+  if (nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); resetAuto(); });
+  if (prevBtn) prevBtn.addEventListener("click", () => { prevSlide(); resetAuto(); });
+
+  function resetAuto() {
+    clearInterval(auto);
+    auto = setInterval(nextSlide, 5000);
+  }
+
+  // 初期表示
+  goToSlide(0);
+});
+</script>
+</html>
